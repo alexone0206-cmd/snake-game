@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>贪吃蛇游戏</h1>
+        
+        <div class="game-info">
+            <div class="score-section">
+                <p><strong>当前分数:</strong> <span id="score">0</span></p>
+                <p><strong>最高分数:</strong> <span id="highScore">0</span></p>
+            </div>
+            
+            <div class="controls">
+                <button id="startBtn" class="btn">开始游戏</button>
+                <button id="pauseBtn" class="btn" disabled>暂停游戏</button>
+                <button id="restartBtn" class="btn" disabled>重新开始</button>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        
+        <div class="settings">
+            <label for="speedControl">游戏速度:</label>
+            <input type="range" id="speedControl" min="1" max="10" value="5">
+            <span id="speedValue">中等</span>
+        </div>
+        
+        <div class="instructions">
+            <h3>游戏说明</h3>
+            <p>使用键盘方向键控制蛇的移动，吃到食物得分。撞到墙壁或自己的身体游戏结束。</p>
+        </div>
+    </div>
+    
+    <!-- 游戏音效 -->
+    <audio id="eatSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gameOverSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-player-losing-or-failing-2042.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="game.js"></script>
+</body>
+</html>
